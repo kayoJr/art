@@ -1,0 +1,96 @@
+@use 'utility' as *;
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.8rem;
+
+	@include breakpoint(xlarge) {
+		font-size: 2.2rem;
+	}
+}
+
+.heading-primary {
+	font-size: 6rem;
+	text-transform: uppercase;
+	font-family: var(--font-shoulder);
+
+	& span {
+		display: block;
+		line-height: 0.92;
+	}
+
+	@include breakpoint(medium) {
+		font-size: 7rem;
+	}
+
+	@include breakpoint(xlarge) {
+		font-size: 9.6rem;
+	}
+}
+
+.heading-secondary {
+	font-size: 5rem;
+	text-transform: uppercase;
+	font-family: var(--font-shoulder);
+
+	& span {
+		display: block;
+		line-height: 0.92;
+	}
+
+	&--white {
+		color: var(--white);
+		line-height: 1.1;
+
+		@include breakpoint-down(medium) {
+			& span {
+				display: initial;
+			}
+		}
+	}
+
+	@include breakpoint(xlarge) {
+		font-size: 6rem;
+	}
+}
+
+.heading-tertiary {
+	font-size: 2.4rem;
+	text-transform: uppercase;
+	font-family: var(--font-shoulder);
+	color: var(--white);
+	& span {
+		display: block;
+		line-height: 0.92;
+	}
+	&--black {
+		color: var(--black);
+	}
+
+	@include breakpoint(xlarge) {
+		font-size: 3.2rem;
+	}
+}
+
+.heading-fourth {
+	color: var(--gold);
+	font-size: 3.2rem;
+	font-family: var(--font-shoulder);
+	line-height: 1;
+}
+
+.description {
+	font-family: var(--font-outfit);
+	color: var(--gray);
+
+	&--white {
+		color: var(--white);
+	}
+
+	&--black {
+		color: var(--black);
+	}
+}

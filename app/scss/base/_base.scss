@@ -1,0 +1,24 @@
+@use 'utility' as *;
+
+.container {
+	max-width: 34.3rem;
+	margin: 0 auto;
+	// position: relative;
+
+	@include breakpoint(small) {
+		max-width: 42rem;
+	}
+
+	@include breakpoint(medium) {
+		max-width: 68.9rem;
+	}
+
+	@include breakpoint(large) {
+		max-width: 96rem;
+	}
+
+	@include breakpoint(xlarge) {
+		max-width: 111rem;
+		// margin: 0 auto;
+	}
+}

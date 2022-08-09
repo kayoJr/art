@@ -1,0 +1,111 @@
+@use 'utility' as *;
+@use 'utility' as *;
+
+.hero {
+	display: flex;
+	flex-direction: column;
+
+	@include breakpoint(medium) {
+		position: relative;
+	}
+
+	@include breakpoint(large) {
+		flex-direction: row;
+		background-color: #fff;
+	}
+
+	&__content {
+		margin-top: 3.2rem;
+
+		@include breakpoint(medium) {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			width: 44%;
+			margin-top: 0;
+			margin-right: 4rem;
+		}
+
+		@include breakpoint(large) {
+			width: auto;
+			inset: 0;
+			transform: none;
+			margin-right: 0;
+			// margin-top: 25rem;
+		}
+
+		& .container {
+			@include breakpoint(large) {
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				height: 100%;
+			}
+		}
+	}
+
+	&__img {
+		width: 100%;
+
+		@include breakpoint(medium) {
+			width: 57%;
+			object-fit: cover;
+			height: 70rem;
+		}
+
+		@include breakpoint(large) {
+			width: 100%;
+			height: 80rem;
+			z-index: 2;
+		}
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		row-gap: 3.2rem;
+
+		@include breakpoint(medium) {
+			row-gap: 4.8rem;
+		}
+
+		@include breakpoint(large) {
+			flex-direction: row;
+			column-gap: 10rem;
+			justify-content: center;
+		}
+
+		@include breakpoint(xlarge) {
+			column-gap: 29rem;
+		}
+
+		&-content {
+			display: flex;
+			flex-direction: column;
+			row-gap: 3.2rem;
+
+			@include breakpoint(medium) {
+				row-gap: 4.8rem;
+			}
+
+			@include breakpoint(large) {
+				width: 35rem;
+			}
+		}
+	}
+
+	&__left {
+		@include breakpoint(large) {
+			flex-grow: 1;
+			background-color: var(--white);
+			mix-blend-mode: difference;
+			z-index: 1;
+		}
+	}
+	&__right {
+		@include breakpoint(large) {
+			flex-grow: 1;
+		}
+	}
+}

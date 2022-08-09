@@ -1,0 +1,88 @@
+@use 'utility' as *;
+
+.gallery {
+	padding-top: 12rem;
+	padding-bottom: 12rem;
+	display: grid;
+	row-gap: 1.6rem;
+
+	@include breakpoint(medium) {
+		grid-template-areas:
+			'grid-text-1 grid-image-1 grid-image-1'
+			'grid-image-2 grid-image-2 grid-image-3'
+			'grid-image-2 grid-image-2 grid-text-2';
+
+		grid-template-columns: 1fr minmax(1rem, 15.5%) 1fr;
+		gap: 1.1rem;
+
+		@include breakpoint(xlarge) {
+			gap: 3rem;
+		}
+	}
+
+	&__image {
+		&--1 {
+			margin-bottom: 0.9rem;
+
+			@include breakpoint(medium) {
+				grid-area: grid-image-1;
+				margin-bottom: 0;
+			}
+		}
+
+		&--2 {
+			@include breakpoint(medium) {
+				grid-area: grid-image-2;
+			}
+		}
+
+		&--3 {
+			@include breakpoint(medium) {
+				grid-area: grid-image-3;
+
+				& img {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	&__text {
+		margin-bottom: 1.6rem;
+
+		&--white {
+			@include breakpoint(medium) {
+				align-self: center;
+			}
+
+			@include breakpoint(xlarge) {
+				max-width: 35rem;
+			}
+		}
+
+		&-content {
+			display: flex;
+			flex-direction: column;
+			row-gap: 2.4rem;
+
+			@include breakpoint(xlarge) {
+				row-gap: 3.2rem;
+			}
+		}
+
+		&--black {
+			background-color: var(--black);
+			color: var(--white);
+			margin-bottom: 0;
+			padding: 4.8rem 2.4rem;
+
+			@include breakpoint(medium) {
+				padding: 8.5rem 2.8rem;
+			}
+
+			@include breakpoint(xlarge) {
+				padding: 6.5rem 4.8rem;
+			}
+		}
+	}
+}

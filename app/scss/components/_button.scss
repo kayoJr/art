@@ -1,0 +1,90 @@
+@use 'utility' as *;
+
+.button {
+	text-decoration: none;
+	font-family: var(--font-shoulder);
+	color: var(--white);
+	background-color: var(--black);
+	position: relative;
+	width: 20.4rem;
+	height: 7.2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2.4rem 0;
+	font-size: 2rem;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	transition: all 0.4s;
+
+	&-right {
+		&::after {
+			content: url('../assets/icon-arrow-right.svg');
+			position: absolute;
+			top: 0;
+			left: 20.4rem;
+			width: 5.6rem;
+			height: 7.2rem;
+			padding-top: 4px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: var(--gold);
+			transition: all 0.4s;
+		}
+	}
+
+	&:hover {
+		background-color: var(--gold);
+
+		&::after {
+			background-color: var(--black);
+		}
+	}
+
+	&-inverse {
+		margin-left: 5.6rem;
+		&::before {
+			content: url('../assets/icon-arrow-left.svg');
+			position: absolute;
+			top: 0;
+			left: -5.5rem;
+			width: 5.6rem;
+			height: 7.2rem;
+			padding-top: 4px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: var(--gold);
+			transition: all 0.4s;
+		}
+		&:hover {
+			background-color: var(--gold);
+
+			&::before {
+				background-color: var(--black);
+			}
+		}
+	}
+}
+
+.button-wrapper {
+	position: absolute;
+	inset: 0;
+	margin: 0 auto;
+
+	@include breakpoint(small) {
+		max-width: 42rem;
+	}
+	@include breakpoint(medium) {
+		max-width: 68.9rem;
+	}
+
+	@include breakpoint(large) {
+		max-width: 96rem;
+	}
+
+	@include breakpoint(xlarge) {
+		max-width: 111rem;
+	}
+}
